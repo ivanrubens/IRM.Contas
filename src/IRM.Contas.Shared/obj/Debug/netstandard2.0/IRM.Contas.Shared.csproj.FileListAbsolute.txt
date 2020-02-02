@@ -1,0 +1,8 @@
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/bin/Debug/netstandard2.0/IRM.Contas.Shared.deps.json
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/bin/Debug/netstandard2.0/IRM.Contas.Shared.dll
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/bin/Debug/netstandard2.0/IRM.Contas.Shared.pdb
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/obj/Debug/netstandard2.0/IRM.Contas.Shared.csprojAssemblyReference.cache
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/obj/Debug/netstandard2.0/IRM.Contas.Shared.AssemblyInfoInputs.cache
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/obj/Debug/netstandard2.0/IRM.Contas.Shared.AssemblyInfo.cs
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/obj/Debug/netstandard2.0/IRM.Contas.Shared.dll
+/home/ivan/dev/proj/IRM.Contas/src/IRM.Contas.Shared/obj/Debug/netstandard2.0/IRM.Contas.Shared.pdb
