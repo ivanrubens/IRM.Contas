@@ -1,6 +1,6 @@
 ﻿using IRM.Contas.Backend.Domain.Core.DTOs;
 using IRM.Contas.Backend.Domain.Core.Entities;
-using IRM.Contas.Backend.Domain.Core.Interfaces;
+using IRM.Contas.Backend.Domain.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace IRM.Contas.Backend.Api.Controllers
             _lancamentosService = lancamentosService;
         }
 
-        [HttpGet("obter-por-periodo")]
+        [HttpGet("{anoMes}")]
         public async Task<RetornoDto<IEnumerable<Lancamento>>> ObterPorPeriodoAsync(string anoMes)
         {
             var retorno = new RetornoDto<IEnumerable<Lancamento>>();

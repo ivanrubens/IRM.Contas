@@ -1,4 +1,5 @@
-﻿using IRM.Contas.Backend.Domain.Core.Interfaces;
+﻿using IRM.Contas.Backend.Domain.Core.Interfaces.Repositories;
+using IRM.Contas.Backend.Domain.Core.Interfaces.Services;
 using IRM.Contas.Backend.Domain.Services;
 using IRM.Contas.Backend.Infra.Data;
 using Microsoft.Extensions.Configuration;
@@ -11,9 +12,11 @@ namespace IRM.Contas.Backend.Infra.Cross.IoC
         public static void RegisterIoC(IConfiguration configuration, IServiceCollection services)
         {
             // Domain / Services
+            services.AddScoped<IPeriodoService, PeriodoService>();
             services.AddScoped<ILancamentoService, LancamentoService>();
 
             // Infra / Data
+            services.AddScoped<IPeriodoRepository, PeriodoRepository>();
             services.AddScoped<ILancamentoRepository, LancamentoRepository>();
         }
     }

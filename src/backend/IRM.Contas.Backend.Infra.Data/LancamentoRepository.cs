@@ -1,5 +1,5 @@
 ﻿using IRM.Contas.Backend.Domain.Core.Entities;
-using IRM.Contas.Backend.Domain.Core.Interfaces;
+using IRM.Contas.Backend.Domain.Core.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
