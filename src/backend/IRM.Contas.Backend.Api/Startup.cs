@@ -1,17 +1,10 @@
 using IRM.Contas.Backend.Infra.Cross.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IRM.Contas.Backend.Api
 {
@@ -34,6 +27,15 @@ namespace IRM.Contas.Backend.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IRM.Contas.Backend.Api", Version = "v1" });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("*") //TODO: Configurar CORS em produção, removendo o * da origin
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
+
             Register.RegisterIoC(Configuration, services);
         }
 
@@ -46,6 +48,8 @@ namespace IRM.Contas.Backend.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IRM.Contas.Backend.Api v1"));
             }
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
 

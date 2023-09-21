@@ -1,0 +1,38 @@
+﻿@page "/periodos"
+
+@inject IPeriodoService periodoService
+
+<h3>Periodos</h3>
+
+@if (periodos == null)
+{
+    <p>Carregando...</p>
+}
+else
+{
+    <RadzenDataGrid Data="@periodos.Resultado" TItem="Periodo" 
+        AllowSorting="true" 
+        AllowMultiColumnSorting="true" 
+        AllowPaging="true" 
+        PageSize="5"
+        AllowFiltering="true" 
+        FilterMode="FilterMode.Advanced" 
+        LogicalFilterOperator="LogicalFilterOperator.Or"
+        >
+        <Columns>
+            <RadzenDataGridColumn TItem="Periodo" Property="AnoMes" Title="Ano/Mês" />
+            <RadzenDataGridColumn TItem="Periodo" Property="Aberto" Title="Aberto" />
+            <RadzenDataGridColumn TItem="Periodo" Property="DataInclusao" Title="Data Inclusao" />
+            <RadzenDataGridColumn TItem="Periodo" Property="DataAlteracao" Title="Data Alteração" />
+        </Columns>
+    </RadzenDataGrid>
+}
+
+@code {
+    public RetornoDto<IEnumerable<Periodo>>? periodos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        periodos = await periodoService.ObterAbertosAsync(); 
+    }
+}

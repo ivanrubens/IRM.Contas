@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32630.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Tests", "3 - Tests", "{B1889928-2AE6-43F4-891B-24996DAD73A6}"
 EndProject
@@ -21,13 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3.1 - CrossCutting", "1.3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Backend.Domain.Core", "backend\IRM.Contas.Backend.Domain.Core\IRM.Contas.Backend.Domain.Core.csproj", "{1CC636BC-AC2E-4232-A5A8-FCF1B1A46443}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRM.Contas.Backend.Api", "backend\IRM.Contas.Backend.Api\IRM.Contas.Backend.Api.csproj", "{C03E188D-33A5-473D-98D7-CD5CAA669935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Backend.Api", "backend\IRM.Contas.Backend.Api\IRM.Contas.Backend.Api.csproj", "{C03E188D-33A5-473D-98D7-CD5CAA669935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRM.Contas.Backend.Domain", "backend\IRM.Contas.Backend.Domain\IRM.Contas.Backend.Domain.csproj", "{22AD1D48-80E6-46A1-BD3C-B2EAA65510C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Backend.Domain", "backend\IRM.Contas.Backend.Domain\IRM.Contas.Backend.Domain.csproj", "{22AD1D48-80E6-46A1-BD3C-B2EAA65510C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Backend.Infra.Cross.IoC", "backend\IRM.Contas.Backend.Infra.Cross.IoC\IRM.Contas.Backend.Infra.Cross.IoC.csproj", "{182F82D0-B365-4D68-88E3-3AC12D6657DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRM.Contas.Backend.Infra.Data", "backend\IRM.Contas.Backend.Infra.Data\IRM.Contas.Backend.Infra.Data.csproj", "{56CD85B6-47AC-4284-93BA-BB8A2E67B472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Backend.Infra.Data", "backend\IRM.Contas.Backend.Infra.Data\IRM.Contas.Backend.Infra.Data.csproj", "{56CD85B6-47AC-4284-93BA-BB8A2E67B472}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRM.Contas.Blazor.Wasm", "frontend\IRM.Contas.Blazor.Wasm\IRM.Contas.Blazor.Wasm.csproj", "{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{56CD85B6-47AC-4284-93BA-BB8A2E67B472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56CD85B6-47AC-4284-93BA-BB8A2E67B472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56CD85B6-47AC-4284-93BA-BB8A2E67B472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{22AD1D48-80E6-46A1-BD3C-B2EAA65510C7} = {B370E9A8-06D8-48E4-98B7-70EA46DB65D4}
 		{182F82D0-B365-4D68-88E3-3AC12D6657DC} = {AD2C38AE-088C-4F6F-BE5F-CD46D61D715A}
 		{56CD85B6-47AC-4284-93BA-BB8A2E67B472} = {D4349995-9BCA-4624-A0BD-8310576BE485}
+		{0A79D476-1CA0-4ADE-BF40-E754EA6EA8B6} = {B6288A30-B8E5-4B6D-B343-5E2449E3E5C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCAE6945-BDE0-4E67-8C8C-F6BD719B9360}

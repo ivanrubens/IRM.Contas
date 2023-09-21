@@ -1,0 +1,43 @@
+﻿@page "/lancamentos"
+
+@inject ILancamentoService lancamentoService
+
+<h3>Lancamentos - @DateTime.Now.ToString("yyyyMM")</h3>
+
+@if (lancamentos == null)
+{
+    <p>Carregando...</p>
+}
+else
+{
+    <RadzenDataGrid Data="@lancamentos.Resultado" TItem="Lancamento"
+                    AllowSorting="true"
+                    AllowMultiColumnSorting="true"
+                    AllowPaging="true"
+                    PageSize="7"
+                    AllowFiltering="true"
+                    FilterMode="FilterMode.Advanced"
+                    LogicalFilterOperator="LogicalFilterOperator.Or" AllowColumnResize="true">
+        <Columns>
+            @* <RadzenDataGridColumn TItem="Lancamento" Property="Id" Title="Id" /> *@
+            @* <RadzenDataGridColumn TItem="Lancamento" Property="idPessoa" Title="Pessoa" /> *@
+            <RadzenDataGridColumn TItem="Lancamento" Property="Descricao" Title="Descricao" Width="25%" />
+            <RadzenDataGridColumn TItem="Lancamento" Property="DataCompra" Title="Data Compra" TextAlign="TextAlign.Center" FormatString="{0:d}" />
+            <RadzenDataGridColumn TItem="Lancamento" Property="Parcela" Title="Parcela" TextAlign="TextAlign.Center" />
+            <RadzenDataGridColumn TItem="Lancamento" Property="QuantidadeParcelas" Title="Qtd. Parcelas" TextAlign="TextAlign.Center" />
+            <RadzenDataGridColumn TItem="Lancamento" Property="Valor" Title="Valor" FormatString="{0:C}"/>
+            @* <RadzenDataGridColumn TItem="Lancamento" Property="idCategoria" Title="Categoria" /> *@
+            <RadzenDataGridColumn TItem="Lancamento" Property="Observacao" Title="Observacao" />
+            <RadzenDataGridColumn TItem="Lancamento" Property="IdStatusConta" Title="StatusConta" TextAlign="TextAlign.Center" />
+        </Columns>
+    </RadzenDataGrid>
+}
+
+@code {
+    public RetornoDto<IEnumerable<Lancamento>>? lancamentos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        lancamentos = await lancamentoService.ObterAtivosPorAnoMesAsync(DateTime.Now.ToString("yyyyMM"));
+    }
+}
